@@ -1,5 +1,8 @@
 {
-  "functions": { "source": "application/.output/server" },
+  "functions": { 
+      "source": "application/.output/server",
+        "runtime": "nodejs16"
+  },
   "hosting": {
     "public": "application/.output/public",
     "cleanUrls": true,
