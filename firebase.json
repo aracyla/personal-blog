@@ -1,5 +1,5 @@
 {
-  "functions": { "source": "application/.output/server" }
+  "functions": { "source": "application/.output/server" },
   "hosting": {
     "public": "application/.output/public",
     "cleanUrls": true,
