@@ -1,0 +1,11 @@
+@use "./vars.scss";
+
+@mixin is-link {
+    transition: color .5s ease;
+    text-decoration: none;
+
+    &:hover {
+        cursor: pointer;
+        color: white!important;
+    }
+}

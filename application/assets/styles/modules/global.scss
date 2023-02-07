@@ -1,0 +1,23 @@
+* {
+    font-family: Roboto;
+    font-family: 'Inconsolata', monospace;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+
+h2, h3, h4, h5, h6 {
+    & a {
+        color: unset;
+        text-decoration: none;
+    }
+}
+
+@font-face {
+    font-family: logo-font;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("~/assets/fonts/logo-font.ttf") format("truetype");
+}
