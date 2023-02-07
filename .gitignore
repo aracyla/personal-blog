@@ -64,3 +64,10 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# Nuxt files
+.output/
+.nuxt/
+.nitro/
+.cache/
+dist
