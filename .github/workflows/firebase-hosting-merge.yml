@@ -41,4 +41,4 @@ jobs:
         with:
           args: deploy 
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PERSONAL_BLOG_9B630 }}
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PERSONAL_BLOG_9B630 }}
