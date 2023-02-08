@@ -19,6 +19,9 @@ jobs:
       - name: Build
         working-directory: ./application
         run: yarn build
+      - name: Hack to Make Deploy on Firebase Work
+        working-directory: ./application
+        run: cd .output/server && yarn install
       - name: Tar Build Artifact
         run: tar -czvf artifact.tar.gz application/.output
       - name: Archive Build Artifact
