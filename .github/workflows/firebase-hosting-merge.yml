@@ -38,7 +38,7 @@ jobs:
         with:
           name: build-artifact-tar
       - name: Untar Build Artifacts
-        run: ls -la
+        run: tar -xvzf artifact.tar.gz
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@v11.22.0
         with:
