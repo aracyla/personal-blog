@@ -20,8 +20,8 @@ jobs:
         working-directory: ./application
         run: yarn build
       - name: Archive Build Artifact
-        working-directory: ./application
         uses: actions/upload-artifact@master
+        working-directory: ./application
         with:
           name: .output
           path: .output
