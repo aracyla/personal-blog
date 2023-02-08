@@ -10,18 +10,21 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./application
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        run: cd application && yarn install
+        run: yarn install
       - name: Build
-        run: cd application && yarn build
-      - name: Archive Production Artifact
+        run: yarn build
+      - name: Archive Build Artifact
         uses: actions/upload-artifact@master
         with:
-          name: dist
-          path: dist
+          name: .output
+          path: .output
   deploy:
     name: Deploy
     needs: build
@@ -31,9 +34,10 @@ jobs:
         uses: actions/checkout@master
       - name: Download Artifact
         uses: actions/download-artifact@master
+        working-directory: ./application
         with:
-          name: dist
-          path: dist
+          name: .output
+          path: .output
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
