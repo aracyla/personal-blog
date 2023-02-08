@@ -10,17 +10,17 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./application
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
+        working-directory: ./application
         run: yarn install
       - name: Build
+        working-directory: ./application
         run: yarn build
       - name: Archive Build Artifact
+        working-directory: ./application
         uses: actions/upload-artifact@master
         with:
           name: .output
