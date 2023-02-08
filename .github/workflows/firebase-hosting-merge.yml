@@ -21,10 +21,9 @@ jobs:
         run: yarn build
       - name: Archive Build Artifact
         uses: actions/upload-artifact@master
-        working-directory: ./application
         with:
-          name: .output
-          path: .output
+          name: build-artifact
+          path: application/.output
   deploy:
     name: Deploy
     needs: build
@@ -34,10 +33,9 @@ jobs:
         uses: actions/checkout@master
       - name: Download Artifact
         uses: actions/download-artifact@master
-        working-directory: ./application
         with:
-          name: .output
-          path: .output
+          name: build-artifact
+          path: application/.output
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
