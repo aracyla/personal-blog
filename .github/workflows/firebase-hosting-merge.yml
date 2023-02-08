@@ -19,13 +19,13 @@ jobs:
       - name: Build
         working-directory: ./application
         run: yarn build
-      - name: Tar Build Artifacts
-        run: tar -cvf artifacts.tar application/.output
+      - name: Tar Build Artifact
+        run: tar -czvf artifact.tar application/.output
       - name: Archive Build Artifact
         uses: actions/upload-artifact@master
         with:
-          name: artifacts
-          path: artifacts.tar
+          name: artifact
+          path: artifact.tar
   deploy:
     name: Deploy
     needs: build
@@ -36,10 +36,9 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: artifacts
-          path: artifacts.tar
+          name: artifact
       - name: Untar Build Artifacts
-        run: tar -xvzf artifacts.tar
+        run: tar -xvzf artifact
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@v11.22.0
         with:
