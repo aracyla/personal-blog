@@ -45,6 +45,6 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@v11.22.0
         with:
-          args: deploy 
+          args: deploy --debug
         env:
           GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PERSONAL_BLOG_9B630 }}
