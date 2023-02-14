@@ -20,6 +20,7 @@
         "sass-loader": "10"
     },
     "dependencies": {
-        "normalize.scss": "^0.1.0"
+        "normalize.scss": "^0.1.0",
+        "vue-gtag-next": "^1.14.0"
     }
 }
